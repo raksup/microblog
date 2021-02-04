@@ -1,9 +1,16 @@
 from flask import render_template, flash, url_for, redirect
 from flask_login.utils import login_required
+from datetime import datetime
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from app.models import User
 from flask_login import login_manager, login_user, current_user, logout_user
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.commit()
 
 @app.route('/')
 @app.route('/index')
@@ -27,8 +34,8 @@ def login():
         login_user(user, remember = form.remember_me.data)
     return render_template('login.html', title='Login', form=form)
 
-@login_required
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('index'))
@@ -46,3 +53,15 @@ def register():
         flash('You have successfully registered','success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+#For user profile page
+@app.route('/user/<username>')
+@login_required
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+
+    posts = [
+        {'author':user, 'body':'Test Post #1'},
+        {'author':user, 'body':'Test Post #2'}
+    ]
+    return render_template('user.html', user=user, posts=posts)
