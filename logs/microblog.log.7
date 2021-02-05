@@ -1,0 +1,115 @@
+2021-02-05 15:32:32,993 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
+2021-02-05 15:32:37,171 ERROR: Exception on / [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 27, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
+2021-02-05 15:32:45,813 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 27, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
+2021-02-05 15:32:47,249 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 27, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
+2021-02-05 15:32:48,451 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 27, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
+2021-02-05 15:32:53,480 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 27, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
+2021-02-05 15:33:24,353 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 27, in index
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'followed_posts'
