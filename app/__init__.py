@@ -1,6 +1,7 @@
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask import Flask
+from flask_mail import Mail, Message
 from flask_sqlalchemy import SQLAlchemy #import for SQL Alchemy
 from flask_migrate import Migrate       #import for db migrations
 from config import Config
@@ -11,6 +12,10 @@ import logging
 app = Flask(__name__)
 db = SQLAlchemy(app)
 migrate = Migrate(app,db)
+
+mail = Mail(app)
+msg = Message(app)
+
 app.config.from_object(Config)          #imports all the Config
 login = LoginManager(app)
 login.login_view = 'login'

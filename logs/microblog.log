@@ -122,3 +122,4 @@ WHERE ? = post.user_id) AS anon_1 ORDER BY anon_1.post_timestamp DESC
 2021-02-05 15:58:07,003 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
 2021-02-05 15:58:49,662 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
 2021-02-05 15:59:21,046 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
+2021-02-05 16:00:38,863 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
