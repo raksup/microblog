@@ -16,6 +16,7 @@ def before_request():
 
 @app.route('/', methods=['GET','POST'])
 @app.route('/index', methods=['GET','POST'])
+@login_required
 def index():
     form = PostForm()
     if form.validate_on_submit():
@@ -25,7 +26,8 @@ def index():
         flash('Your post is now live!')
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
-    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)    #Find and solve error
+    pos = current_user.followed_posts()
+    posts = pos.paginate(page, app.config['POSTS_PER_PAGE'], False)    #Find and solve error
     next_url = url_for('index', page=posts.next_num) \
         if posts.has_next else None
     prev_url = url_for('index', page=posts.prev_num) \
