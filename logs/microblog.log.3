@@ -1,4 +1,4 @@
-2021-02-05 15:56:04,549 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+2021-02-05 15:56:27,077 ERROR: Exception on /user/sanket [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
     cursor, statement, parameters, context
@@ -21,8 +21,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\User\Desktop\microblog\app\routes.py", line 28, in index
-    page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 93, in user
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
     items = self.limit(per_page).offset((page - 1) * per_page).all()
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
@@ -48,16 +50,12 @@ Traceback (most recent call last):
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
     cursor.execute(statement, parameters)
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.body
-[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id 
-FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
-FROM post JOIN followers ON followers.followed_id = post.user_id 
-WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
-FROM post 
-WHERE ? = post.user_id) AS anon_1 ORDER BY anon_1.post_timestamp DESC
+[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post ORDER BY post.timestamp DESC
  LIMIT ? OFFSET ?]
-[parameters: (2, 2, 3, 0)]
+[parameters: (3, 0)]
 (Background on this error at: http://sqlalche.me/e/13/e3q8)
-2021-02-05 15:56:04,669 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+2021-02-05 15:56:28,964 ERROR: Exception on /explore [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
     cursor, statement, parameters, context
@@ -80,8 +78,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\User\Desktop\microblog\app\routes.py", line 28, in index
-    page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 43, in explore
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
     items = self.limit(per_page).offset((page - 1) * per_page).all()
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
@@ -107,13 +107,8 @@ Traceback (most recent call last):
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
     cursor.execute(statement, parameters)
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.body
-[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id 
-FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
-FROM post JOIN followers ON followers.followed_id = post.user_id 
-WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
-FROM post 
-WHERE ? = post.user_id) AS anon_1 ORDER BY anon_1.post_timestamp DESC
+[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post ORDER BY post.timestamp DESC
  LIMIT ? OFFSET ?]
-[parameters: (2, 2, 3, 0)]
+[parameters: (3, 0)]
 (Background on this error at: http://sqlalche.me/e/13/e3q8)
-2021-02-05 15:56:19,932 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]

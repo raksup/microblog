@@ -7,6 +7,7 @@ from flask_migrate import Migrate       #import for db migrations
 from config import Config
 from flask_login import LoginManager    #for login manager 1
 import logging
+from flask_bootstrap import Bootstrap
 
 
 app = Flask(__name__)
@@ -14,7 +15,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app,db)
 
 mail = Mail(app)
-msg = Message(app)
+bootstrap = Bootstrap(app)
 
 app.config.from_object(Config)          #imports all the Config
 login = LoginManager(app)

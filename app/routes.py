@@ -1,12 +1,11 @@
 from flask import render_template, flash, url_for, redirect, request
 from werkzeug.urls import url_parse
-from flask_login.utils import login_required
 from datetime import datetime
 from app import app, db
 from app.forms import EditProfileForm, LoginForm, RegistrationForm, EmptyForm, PostForm,\
                         ResetPasswordRequestForm, ResetPasswordForm
 from app.models import User, Post
-from flask_login import login_manager, login_user, current_user, logout_user
+from flask_login import login_required, login_user, current_user, logout_user
 from app.email import send_password_reset_email
 
 @app.before_request
@@ -26,8 +25,7 @@ def index():
         flash('Your post is now live!')
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
-    posts = current_user.followed_posts().paginate(
-        page, app.config['POSTS_PER_PAGE'], False)
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)    #Find and solve error
     next_url = url_for('index', page=posts.next_num) \
         if posts.has_next else None
     prev_url = url_for('index', page=posts.prev_num) \

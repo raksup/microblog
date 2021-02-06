@@ -1,5 +1,3 @@
-from sqlalchemy.orm import backref
-
 from time import time
 from hashlib import md5
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -30,7 +28,6 @@ class User(UserMixin, db.Model):
                             secondaryjoin= (followers.c.followed_id == id),\
                             backref= db.backref('followers', lazy='dynamic'), lazy='dynamic')
 
-
     def __repr__(self):
         return '<User {}'.format(self.username)
     
@@ -56,14 +53,16 @@ class User(UserMixin, db.Model):
         return self.followed.filter(followers.c.followed_id == user.id).count() >0
     
     def followed_posts(self):
-        followed = Post.query.join(followers, (followers.c.followed_id == Post.user_id)).\
-                    filter(followers.c.follower_id == self.id)
-        return followed.union(self.posts).order_by(Post.timestamp.desc())
+        followed = Post.query.join(
+            followers, (followers.c.followed_id == Post.user_id)).filter(
+                followers.c.follower_id == self.id)
+        own = Post.query.filter_by(user_id= self.id)
+        return followed.union(own).order_by(Post.timestamp.desc())
     
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
             {'reset_password': self.id, 'exp': time() + expires_in},
-            app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+            app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')        #Error here. Solve
 
     @staticmethod
     def verify_reset_password_token(token):
@@ -81,4 +80,4 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Post {}'.format(self.body)
+        return '<Post {}>'.format(self.body)
