@@ -1,4 +1,13 @@
-2021-02-05 15:48:28,676 ERROR: Exception on /explore [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+2021-02-05 15:56:04,549 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: post.body
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,124 +21,99 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\User\Desktop\microblog\app\routes.py", line 48, in explore
-    return render_template('index.html', title='Explore', posts=posts, next_url=next_url, prev_url=prev_url)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\User\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\User\Desktop\microblog\app\templates\base.html", line 30, in top-level template code
-    {% block content %}{% endblock content %}
-  File "C:\Users\User\Desktop\microblog\app\templates\index.html", line 19, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2021-02-05 15:49:28,015 ERROR: Exception on /explore [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\User\Desktop\microblog\app\routes.py", line 48, in explore
-    return render_template('index.html', title='Explore', posts=posts.items, next_url=next_url, prev_url=prev_url)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\User\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\User\Desktop\microblog\app\templates\base.html", line 30, in top-level template code
-    {% block content %}{% endblock content %}
-  File "C:\Users\User\Desktop\microblog\app\templates\index.html", line 19, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2021-02-05 15:49:29,577 ERROR: Exception on /explore [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\User\Desktop\microblog\app\routes.py", line 48, in explore
-    return render_template('index.html', title='Explore', posts=posts.items, next_url=next_url, prev_url=prev_url)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\User\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\User\Desktop\microblog\app\templates\base.html", line 30, in top-level template code
-    {% block content %}{% endblock content %}
-  File "C:\Users\User\Desktop\microblog\app\templates\index.html", line 19, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2021-02-05 15:49:33,414 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
-2021-02-05 15:49:42,145 ERROR: Exception on /index [POST] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\User\Desktop\microblog\app\routes.py", line 21, in index
-    post = Post(body=form.post.data, author=current_user)
-  File "<string>", line 4, in __init__
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\state.py", line 433, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
-    with_traceback=exc_tb,
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 28, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
   File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
     raise exception
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\state.py", line 430, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 840, in _declarative_constructor
-    "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
-TypeError: 'body' is an invalid keyword argument for Post
-2021-02-05 15:51:53,386 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.body
+[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id 
+FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE ? = post.user_id) AS anon_1 ORDER BY anon_1.post_timestamp DESC
+ LIMIT ? OFFSET ?]
+[parameters: (2, 2, 3, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2021-02-05 15:56:04,669 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: post.body
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 28, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3373, in all
+    return list(self)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\orm\query.py", line 3560, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\sqlalchemy\engine\default.py", line 608, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.body
+[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id 
+FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE ? = post.user_id) AS anon_1 ORDER BY anon_1.post_timestamp DESC
+ LIMIT ? OFFSET ?]
+[parameters: (2, 2, 3, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2021-02-05 15:56:19,932 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:45]
