@@ -32,3 +32,56 @@ Traceback (most recent call last):
   File "C:\Users\User\Desktop\microblog\app\routes.py", line 17, in before_request
     g.locale = str(get_locale())
 NameError: name 'g' is not defined
+2021-02-07 14:31:37,244 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:16:49,763 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:16:58,140 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:19:01,876 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:19:26,847 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:19:54,801 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:20:00,425 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:21:36,855 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:21:43,307 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:21:49,673 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:21:55,102 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:22:16,323 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:22:39,894 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:22:45,036 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:23:22,033 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:23:27,693 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:23:32,876 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:27:18,497 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:39:29,117 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:39:54,773 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:40:16,216 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:40:42,803 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:41:52,973 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:42:23,031 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:45:10,589 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:45:37,139 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:48:37,335 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:48:43,723 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:49:18,933 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:49:28,826 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:49:36,378 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:50:10,790 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:50:33,714 ERROR: Exception on /index [GET] [in c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\user\desktop\microblog\myenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\User\Desktop\microblog\app\routes.py", line 44, in index
+    prev_url=prev_url, language=language)
+UnboundLocalError: local variable 'language' referenced before assignment
+2021-02-08 11:52:48,446 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
+2021-02-08 11:55:24,904 INFO: Microblog startup [in C:\Users\User\Desktop\microblog\app\__init__.py:60]
